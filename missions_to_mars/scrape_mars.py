@@ -19,7 +19,7 @@ from splinter.exceptions import ElementDoesNotExist
 def scrape():
 
     # browser instance
-    browser = Browser('firefox', headless=False)
+    browser = Browser('firefox', headless=True)
 
     # ----------------------------------------
 
@@ -96,7 +96,7 @@ def scrape():
 
     df = df.rename(columns={0:'attribute', 1:'observation'})
 
-    df_html = df.to_html().replace('\n', '')
+    df_html = df.to_html(index=False).replace('\n', '')
 
     table_dict = {
         'table' : str(table_html),

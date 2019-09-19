@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Mars Data Theft</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+	<div class="container-fluid">
+
+		<div class="jumbotron jumbotron-fluid text-center">
+			<h1>Mission to Mars</h1>
+			<p><a class="btn btn-danger btn-lg" href="/scrape" role="button">Scrape new data</a></p>
+		</div>
+
+		<!-- News -->
+		<div class="row" id="lastest_news">
+			<div class="col-md-12">
+				<h4 class="heading">Latest Mars News: {{mars.news.title}}</h4>
+				<small>{{mars.news.article}}</small>
+			</div>
+			<!--</div>-->
+
+
+			<!--<div class="row">-->
+			<div class="col-md-12">
+
+
+				<div class="row">
+					<div class="col-md-8 col-sm-8">
+						<img alt="Bootstrap Image Preview" height=1440 width=900 src={{mars.feat_img_dict.img}}
+							class="img-thumbnail" />
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="card bg-default">
+							<h5 class="card-header">
+								Current Weather on Mars
+							</h5>
+							<div class="card-body">
+								<p class="card-text">
+									{{mars.weather_dict.weather_data}}
+								</p>
+							</div>
+						</div>
+
+						<!-- {{mars.table_dict.df}} -->
+
+						{{mars.table_dict.df|safe}}
+
+					</div>
+				</div>
+			</div>
+
+			<div class="page-header text-center">
+				<h1>
+					Mars Hemispheres
+				</h1>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-center">
+					<div class="card">
+						<img class="card-img-top" alt="{{mars.hemisphere_image_urls[0].title}}" height=400 width=400
+							src={{mars.hemisphere_image_urls[0].img_url}} />
+						<div class="card-block">
+							<h5 class="card-title">
+								{{mars.hemisphere_image_urls[0].title}}
+							</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 text-center">
+					<div class="card">
+						<img class="card-img-top" alt="{{mars.hemisphere_image_urls[1].title}}" height=400 width=400
+							src={{mars.hemisphere_image_urls[1].img_url}} />
+						<div class="card-block">
+							<h5 class="card-title">
+								{{mars.hemisphere_image_urls[1].title}}
+							</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 text-center">
+					<div class="card">
+						<img class="card-img-top" alt="{{mars.hemisphere_image_urls[2].title}}" height=400 width=400
+							src={{mars.hemisphere_image_urls[2].img_url}} />
+						<div class="card-block">
+							<h5 class="card-title">
+								{{mars.hemisphere_image_urls[2].title}}
+							</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 text-center">
+					<div class="card">
+						<img class="card-img-top" alt="{{mars.hemisphere_image_urls[3].title}}" height=400 width=400
+							src={{mars.hemisphere_image_urls[3].img_url}} />
+						<div class="card-block">
+							<h5 class="card-title">
+								{{mars.hemisphere_image_urls[3].title}}
+							</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+
+</body>
+
+</html>
